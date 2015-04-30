@@ -1,3 +1,5 @@
+
+
 app.controller("NavCtrl", function($scope, $http, $location, $rootScope){
    $scope.logout = function(){
        $http.post("/logout")
@@ -7,3 +9,4 @@ app.controller("NavCtrl", function($scope, $http, $location, $rootScope){
        });
    } 
 });
+

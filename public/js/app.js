@@ -1,5 +1,5 @@
 
-var app = angular.module("PassportApp", ["ngRoute"]);
+var app = angular.module("PassportApp", ["ngRoute",'RegisterCtrl']);
 
 app.config(function($routeProvider, $httpProvider) {
     $routeProvider
@@ -51,12 +51,3 @@ var checkLoggedin = function($q, $timeout, $http, $location, $rootScope)
     return deferred.promise;
 };
 
-app.controller("NavCtrl", function($scope, $http, $location, $rootScope){
-    $scope.logout = function(){
-        $http.post("/logout")
-        .success(function(){
-            $rootScope.currentUser = null;
-            $location.url("/home");
-        });
-    };
-});

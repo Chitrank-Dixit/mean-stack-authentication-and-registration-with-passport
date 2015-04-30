@@ -1,3 +1,5 @@
+
+
 app.controller('ProfileCtrl', function($scope, $http){
     
     $http.get("/rest/user")
@@ -35,3 +37,4 @@ app.controller('ProfileCtrl', function($scope, $http){
         $scope.user = user;
     }
 });
+

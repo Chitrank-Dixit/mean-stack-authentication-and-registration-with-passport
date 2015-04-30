@@ -1,4 +1,6 @@
-app.controller("RegisterCtrl", function($scope, $http, $location, $rootScope){
+
+var app= angular.module('RegisterCtrl', []);
+app.controller('RegisterCtrl',['$scope', '$http', '$location', '$rootScope', function($scope, $http, $location, $rootScope){
     $scope.register = function(user){
         console.log(user);
         if(user.password != user.password2 || !user.password || !user.password2)
@@ -18,4 +20,4 @@ app.controller("RegisterCtrl", function($scope, $http, $location, $rootScope){
             });
         }
     }
-});
+}]);

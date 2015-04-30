@@ -1,3 +1,5 @@
+
+
 app.controller("LoginCtrl", function($scope, $http, $location, $rootScope){
     $scope.login = function(user){
         console.log(user);
@@ -9,3 +11,4 @@ app.controller("LoginCtrl", function($scope, $http, $location, $rootScope){
         });
     }
 });
+

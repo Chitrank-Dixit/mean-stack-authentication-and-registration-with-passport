@@ -23,7 +23,7 @@ var UserModel = mongoose.model('UserModel', UserSchema);
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(multer()); // for parsing multipart/form-data
-app.use(session({ secret: 'this is the secret' }));
+app.use(session({ secret: 'this is the secret', resave: true, saveUninitialized: true }));
 app.use(cookieParser())
 app.use(passport.initialize());
 app.use(passport.session());
@@ -83,7 +83,7 @@ app.post('/logout', function(req, res)
 app.post('/register', function(req, res)
 {
     var newUser = req.body;
-    newUser.roles = ['student'];
+    newUser.roles = ['student','admin'];
     UserModel.findOne({username: newUser.username}, function(err, user)
     {
         if(err) { return next(err); }
